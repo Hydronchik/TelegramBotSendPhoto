@@ -145,7 +145,7 @@ public class PictureBot extends TelegramLongPollingBot {
             long chatId = message.getChatId();
             String text = message.getText();
 
-            // Forward the message to the group chat
+
             SendMessage sendMessage = new SendMessage();
             sendMessage.setChatId(GROUP_CHAT_ID);
             sendMessage.setText(text);
@@ -153,7 +153,6 @@ public class PictureBot extends TelegramLongPollingBot {
             try {
                 execute(sendMessage);
 
-                // Send a confirmation message to the user
 
                 SendMessage confirmationMessage = new SendMessage();
                 confirmationMessage.setChatId(chatId);
